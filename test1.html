@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+
+var data = new FormData();
+data.append("email", "faeaef@qq.com");
+data.append("password", "flkdsa");
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "http://api.heclouds.com/devices/4092961/datastreams/shidu");
+xhr.setRequestHeader("api-key", "XgjTx5IC2Zxsru3i=IF3VwT3LiA=");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "b28af810-a985-fbea-255b-24bff9c5658b");
+
+xhr.send(data);
+</script>
+</html>
